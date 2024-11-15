@@ -72,11 +72,11 @@ html, body {
     margin-bottom: 5%;
     border-radius: 5px;
     border: solid 5px #dad7d5;
-    transition: transform 0.3s ease; /* Smooth transition */
+    transition: transform 0.3s ease; 
 }
 
 .films_block img:hover {
-    transform: scale(1.12); /* Slightly enlarges the image on hover */
+    transform: scale(1.10);
 }
 
 .films_block.series img {
@@ -87,7 +87,7 @@ html, body {
 }
 
 .films_block.series img:hover {
-    transform: rotate(12deg) scale(1.05); /* Rotate and slightly enlarge on hover */
+    transform: scale(0.9);
 }
 
 .film_label {
