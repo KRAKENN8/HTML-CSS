@@ -1,0 +1,134 @@
+/* Animation properties */
+.star {
+    animation: star 10s ease-out infinite reverse; /* Реверс анимации */
+}
+
+.wars {
+    animation: wars 10s ease-out infinite reverse; /* Реверс анимации */
+}
+
+.byline {
+    animation: move-byline 10s linear infinite reverse, fade-byline 11s ease-in-out infinite; /* Анимация прозрачности */
+}
+
+/* Keyframes */
+@keyframes star {
+    0% {
+        opacity: 0;
+        transform: scale(1.5) translateY(-0.75em);
+    }
+    20% {
+        opacity: 1;
+    }
+    89% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateZ(-1000em);
+    }
+}
+
+@keyframes wars {
+    0% {
+        opacity: 0;
+        transform: scale(1.5) translateY(0.5em);
+    }
+    20% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateZ(-1000em);
+    }
+}
+
+@keyframes move-byline {
+    0% {
+        transform: translateZ(5em);
+    }
+    100% {
+        transform: translateZ(0);
+    }
+}
+
+/* Новая анимация для прозрачности */
+@keyframes fade-byline {
+    0% {
+        opacity: 1; /* Начинается полностью видимым */
+    }
+    50% {
+        opacity: 0; /* Становится прозрачным к середине */
+    }
+    100% {
+        opacity: 0; /* Остается прозрачным до конца */
+    }
+}
+
+/* Make the 3D work on the container */
+.starwars-demo {
+    perspective: 800px;
+    transform-style: preserve-3d;
+}
+
+/* General styles and layout */
+body {
+    background: #000 url(//cssanimation.rocks/demo/starwars/images/bg.jpg);
+    margin: 0;
+    overflow: hidden;
+}
+
+.starwars-demo {
+    height: 17em;
+    left: 50%;
+    position: absolute;
+    top: 53%;
+    transform: translate(-50%, -50%);
+    width: 34em;
+}
+
+img {
+    width: 100%;
+}
+
+.star, .wars, .byline {
+    position: absolute;
+}
+
+.star {
+    top: -0.75em;
+}
+
+.wars {
+    bottom: -0.5em;
+}
+
+.byline {
+    color: #fff;
+    font-family: "ITC Serif Gothic", Lato;
+    font-size: 2.25em;
+    left: -2em;
+    letter-spacing: 0.4em;
+    right: -2em;
+    text-align: center;
+    text-transform: uppercase;
+    top: 29%;
+}
+
+/* Media queries for responsive design */
+@media only screen and (max-width: 600px) {
+    .starwars-demo {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .starwars-demo {
+        font-size: 7px;
+    }
+}
